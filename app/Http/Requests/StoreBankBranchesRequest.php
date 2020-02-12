@@ -1,0 +1,38 @@
+<?php
+
+namespace App\Http\Requests;
+
+use App\BankBranche;
+use Illuminate\Foundation\Http\FormRequest;
+
+class StoreBankBranchesRequest extends FormRequest
+{
+    public function authorize()
+    {
+        return \Gate::allows('sucursalCredito_create');
+    }
+
+    public function rules()
+    {
+        return [
+            'name'          => ['required'],
+            'address'       => ['nullable'],
+            'phone'         => ['nullable'],
+            'email'         => ['nullable'],
+            'contact'       => ['nullable'],
+            'manager'       => ['nullable'],
+            'bank_id'       => ['required', 'exists:banks,id'],
+            'location_id'   => ['required', 'exists:locations,id'],
+            'user_id'       => ['required', 'exists:users,id'],
+        ];
+    }
+
+    public function messages()
+     {
+        return [
+            'name.required'         => 'El Nombre de la Localidad es obligatorio',
+            'bank_id.required'      => 'Deberá seleccionar un Banco',
+            'location_id.required'  => 'Deberá seleccionar una Localidad',
+        ];
+    }
+}
