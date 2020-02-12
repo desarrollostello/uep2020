@@ -20,6 +20,7 @@ class CreateProjectMovemmentsTable extends Migration
             $table->integer('project_id')->unsigned();
             $table->date('date');
             $table->string('file');
+            $table->string('icon');
             $table->text('description');
             $table->timestamps();
             $table->softDeletes();

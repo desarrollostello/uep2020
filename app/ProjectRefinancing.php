@@ -29,6 +29,7 @@ class ProjectRefinancing extends Model
         'description',
         'grace_period',
         'amortization_period',
+        'periodicity_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -43,6 +44,11 @@ class ProjectRefinancing extends Model
     public function projects()
     {
         return $this->belongsTo('App\Project', 'project_id');
+    }
+
+    public function periodicities()
+    {
+        return $this->belongsTo('App\Periodicity', 'periodicity_id');
     }
 
     /**
