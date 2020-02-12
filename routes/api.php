@@ -7,7 +7,6 @@ Route::group(['prefix' => 'v1', 'as' => 'admin.', 'namespace' => 'Api\V1\Admin']
 
     Route::apiResource('users', 'UsersApiController');
 
-
     Route::apiResource('bank', 'BanksApiController');
 
     Route::apiResource('departament', 'DepartamentsApiController');
@@ -37,4 +36,22 @@ Route::group(['prefix' => 'v1', 'as' => 'admin.', 'namespace' => 'Api\V1\Admin']
     Route::apiResource('location', 'LocationsApiController');
 
     Route::apiResource('bankBranche', 'BankBranchesApiController');
+
+    Route::apiResource('audit', 'AuditsApiController');
+
+    Route::apiResource('checklist', 'ChecklistsApiController');
+
+    Route::apiResource('disbursement', 'DisbursementsApiController');
+
+    Route::apiResource('project', 'ProjectsApiController');
+
+    Route::apiResource('projectAlert', 'ProjectAlertsApiController');
+
+    Route::apiResource('projectAnnexe', 'ProjectAnnexesApiController');
+
+    Route::apiResource('projectApplicant', 'ProjectApplicantsApiController');
+
+    Route::apiResource('projectMovement', 'ProjectMovementsApiController');
+
+    Route::apiResource('projectRefinancing', 'ProjectRefinancingsApiController');
 });

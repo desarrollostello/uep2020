@@ -70,4 +70,33 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('bankBranche','BankBranchesController');
     Route::delete('bankBranche/destroy', 'BankBranchesController@massDestroy')->name('bankBranche.massDestroy');
 
+    Route::resource('audit','AuditsController');
+    Route::delete('audit/destroy', 'AuditsController@massDestroy')->name('audit.massDestroy');    
+
+    Route::resource('creditSubject','CreditSubjectsController');
+    Route::delete('creditSubject/destroy', 'CreditSubjectsController@massDestroy')->name('creditSubject.massDestroy');
+
+
+    Route::resource('disbursement','DisbursementsController');
+    Route::delete('disbursement/destroy', 'DisbursementsController@massDestroy')->name('disbursement.massDestroy');
+
+    Route::resource('project','ProjectsController');
+    Route::delete('project/destroy', 'ProjectsController@massDestroy')->name('project.massDestroy');
+
+    Route::resource('projectAlert','ProjectAlertsController');
+    Route::delete('projectAlert/destroy', 'ProjectAlertsController@massDestroy')->name('projectAlert.massDestroy');
+
+    Route::resource('projectAnnexe','ProjectAnnexesController');
+    Route::delete('projectAnnexe/destroy', 'ProjectAnnexesController@massDestroy')->name('projectAnnexe.massDestroy');
+
+    Route::resource('projectApplicant','ProjectApplicantsController');
+    Route::delete('projectApplicant/destroy', 'ProjectApplicantsController@massDestroy')->name('projectApplicant.massDestroy');
+
+    Route::resource('projectMovement','ProjectMovementsController');
+    Route::delete('projectMovement/destroy', 'ProjectMovementsController@massDestroy')->name('projectMovement.massDestroy');
+
+    Route::resource('projectRefinancing','ProjectRefinancingsController');
+    Route::delete('projectRefinancing/destroy', 'ProjectRefinancingsController@massDestroy')->name('projectRefinancing.massDestroy');
+
+
 });
