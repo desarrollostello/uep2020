@@ -12,6 +12,7 @@ class Checklist extends Model
     protected $table = 'checklists';
 
     protected $dates = [
+        'date',
         'created_at',
         'updated_at',
         'deleted_at',
