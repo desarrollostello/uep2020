@@ -8,7 +8,7 @@ use App\Http\Requests\StorePeriodicityRequest;
 use App\Http\Requests\UpdatePeriodicityRequest;
 use App\Periodicity;
 
-class PeriodicityController extends Controller
+class PeriodicitiesController extends Controller
 {
     public function index()
     {
