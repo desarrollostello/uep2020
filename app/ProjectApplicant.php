@@ -5,11 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ProjectRefinancing extends Model
+class ProjectApplicant extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'project_refinancings';
+    protected $table = 'project_applicants';
 
     protected $dates = [
         'date_birth',
