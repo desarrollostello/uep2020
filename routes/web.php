@@ -98,5 +98,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('projectRefinancing','ProjectRefinancingsController');
     Route::delete('projectRefinancing/destroy', 'ProjectRefinancingsController@massDestroy')->name('projectRefinancing.massDestroy');
 
+    Route::resource('checklist','ChecklistsController');
+    Route::delete('checklist/destroy', 'ChecklistsController@massDestroy')->name('checklist.massDestroy');
+
 
 });

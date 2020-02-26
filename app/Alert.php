@@ -19,12 +19,12 @@ class Alert extends Model
 
     protected $fillable = [
         'name',
-        'estado',
+        'stats_rand_gen_exponential(av)',
         'codigo',
         'color',
         'sql',
-        'mensaje',
-        'dias',
+        'message',
+        'days',
         'created_at',
         'updated_at',
         'deleted_at',

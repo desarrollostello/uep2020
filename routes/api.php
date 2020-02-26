@@ -54,4 +54,6 @@ Route::group(['prefix' => 'v1', 'as' => 'admin.', 'namespace' => 'Api\V1\Admin']
     Route::apiResource('projectMovement', 'ProjectMovementsApiController');
 
     Route::apiResource('projectRefinancing', 'ProjectRefinancingsApiController');
+
+    Route::apiResource('creditSubject', 'CreditSubjectsApiController');
 });

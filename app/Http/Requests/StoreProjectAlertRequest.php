@@ -17,6 +17,7 @@ class StoreProjectAlertRequest extends FormRequest
         return [
             'project_id'        => ['required'],
         	'alert_id'          => ['required'],
+            'user_id'           => ['required'],
         ];
     }
 

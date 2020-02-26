@@ -20,6 +20,7 @@ class ProjectAlert extends Model
     protected $fillable = [
         'project_id',
         'alert_id',
+        'user_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -44,6 +45,10 @@ class ProjectAlert extends Model
     public function alerts()
     {
         return $this->belongsTo('App\Alert', 'alert_id');
+    }
+    public function users()
+    {
+        return $this->belongsTo('App\User', 'user_id');
     }
 
 }
