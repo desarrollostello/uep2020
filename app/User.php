@@ -65,6 +65,32 @@ class User extends Authenticatable
         return $this->hasMany(App\Project::class);
     }
 
+    public function projectApplicants()
+    {
+        return $this->hasMany(App\ProjectApplicant::class);
+    }
+
+    public function projectAnnexes()
+    {
+        return $this->hasMany(App\ProjectAnnexe::class);
+    }
+
+    public function projectMovements()
+    {
+        return $this->hasMany(App\ProjectMovement::class);
+    }
+
+    public function bankBranches()
+    {
+        return $this->hasMany(App\BankBranche::class);
+    }
+
+    public function audits()
+    {
+        return $this->hasMany(App\Audit::class);
+    }
+
+
     public function roles()
     {
         return $this->belongsToMany(Role::class);

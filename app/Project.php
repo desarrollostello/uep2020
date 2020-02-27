@@ -88,7 +88,7 @@ class Project extends Model
     }
 
     /**
-     * Retorna el Codigo Postal de la Localidad
+     * Retorna la Localidad
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -99,7 +99,7 @@ class Project extends Model
 
 
     /**
-     * Retorna el Codigo Postal de la Localidad
+     * Retorna la Línea de Crpedito
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -109,23 +109,24 @@ class Project extends Model
         return $this->belongsTo('App\CreditLine', 'creditLine_id');
     }
 
+
+
     /**
-     * Retorna el Codigo Postal de la Localidad
-     *
+     * Retorna el ESTADO del Proyecto
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    
+     */    
     public function state()
     {
         return $this->belongsTo('App\State', 'state_id');
     }
 
+
+
      /**
-     * Retorna el Codigo Postal de la Localidad
+     * Retorna el SECTOR del Proyecto
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    
     public function sector()
     {
         return $this->belongsTo('App\Sector', 'sector_id');
@@ -133,7 +134,7 @@ class Project extends Model
 
 
      /**
-     * Retorna el Codigo Postal de la Localidad
+     * Retorna la Figura Legla del Proyecto
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -143,7 +144,7 @@ class Project extends Model
     }
 
     /**
-     * Retorna el Codigo Postal de la Localidad
+     * Retorna la Periodicidad del Proyecto
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -153,7 +154,7 @@ class Project extends Model
     }
 
     /**
-     * Retorna el Codigo Postal de la Localidad
+     * Retorna el Destino de Crédito del Proyecto
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -163,7 +164,7 @@ class Project extends Model
     }
 
     /**
-     * Retorna el Codigo Postal de la Localidad
+     * Retorna la Garantía del Proyecto
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -172,13 +173,19 @@ class Project extends Model
         return $this->belongsTo('App\Guarantie', 'guarantie_id');
     }
 
+
+    /**
+     * Retorna la Sucursal del Proyecto
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function bankBranche()
     {
         return $this->belongsTo('App\BankBranche', 'bank_branche_id');
     }
 
     /**
-     * Retorna el Codigo Postal de la Localidad
+     * Retorna el Usuario que cargo el Proyecto
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -187,20 +194,50 @@ class Project extends Model
         return $this->belongsTo('App\User', 'user_id');
     }
 
+
+    /**
+     * Un mismo Proyecto puede tener varios Movimientos
+     *por ello la relación es hasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
     public function movements()
     {
         return $this->hasMany(App\ProjectMovement::class);
     }
-    public function alerts()
+
+
+    /**
+     * Un mismo Proyecto puede tener varias Alertas Proyectos
+     *por ello la relación es hasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
+    public function projectAlerts()
     {
         return $this->hasMany(App\ProjectAlert::class);
     }
+
+
+    /**
+     * Un mismo Proyecto puede tener varios Desembolsos
+     *por ello la relación es hasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
     public function disbursements()
     {
         return $this->hasMany(App\Disbursement::class);
     }
 
-    public function refinancings()
+
+    /**
+     * Un mismo Proyecto puede tener varias Refinanciaciones
+     *por ello la relación es hasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
+    public function projectRefinancings()
     {
         return $this->hasMany(App\ProyectRefinancing::class);
     }

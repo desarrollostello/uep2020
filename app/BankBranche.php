@@ -42,23 +42,29 @@ class BankBranche extends Model
         return strtoupper($this->attributes['name']);
     }
 
-    public function user()
-    {
-        return $this->belongsTo('App\User', 'user_id');
-    }
-
-    public function location()
-    {
-        return $this->belongsTo('App\Location', 'location_id');
-    }
-
+    //  Un banco puede estar en varias sucursales
     public function bank()
     {
         return $this->belongsTo('App\Bank', 'bank_id');
     }
 
+    // Una localidad puede estar en varias sucursales
+    public function location()
+    {
+        return $this->belongsTo('App\Location', 'location_id');
+    }
+
+    // Un Usuario puede cargar varias sucursales
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'user_id');
+    }
+
+    //  una Sucursal puede estar presente en varios proyectos
     public function projects()
     {
         return $this->hasMany(App\Project::class);
     }
+
+
 }

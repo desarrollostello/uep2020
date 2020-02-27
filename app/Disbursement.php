@@ -19,7 +19,7 @@ class Disbursement extends Model
     ];
 
     protected $fillable = [
-        'proyect_id',
+        'project_id',
         'date',
         'nro',
         'amount',

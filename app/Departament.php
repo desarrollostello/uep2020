@@ -34,6 +34,12 @@ class Departament extends Model
         return strtoupper($this->attributes['name']);
     }
 
+
+     /**
+     * Un mismo Departamento puede estar presente en varias localidades
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
 	public function locations()
   	{
     	return $this->hasMany(App\Location::class);

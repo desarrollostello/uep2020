@@ -34,6 +34,12 @@ class Sector extends Model
         return strtoupper($this->attributes['name']);
     }
 
+    /**
+     *Un mismo SECTOR puede estar presente varias veces en Projects
+     *por ello la relación es hasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
     public function projects()
     {
         return $this->hasMany(App\Project::class);

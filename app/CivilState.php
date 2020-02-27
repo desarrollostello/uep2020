@@ -33,4 +33,15 @@ class CivilState extends Model
     {
         return strtoupper($this->attributes['name']);
     }
+
+    /**
+     *Un mismo Estado Civil puede estar presente varias veces en ProjectApplicant
+     *por ello la relación es hasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
+    public function projectApplicants()
+    {
+        return $this->hasMany(App\ProjectApplicant::class);
+    }
 }

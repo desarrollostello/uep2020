@@ -34,6 +34,12 @@ class Guatantie extends Model
         return strtoupper($this->attributes['name']);
     }
 
+     /**
+     *Una misma Garantia puede estar presente varias veces en Project
+     *por ello la relación es hasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
     public function projects()
     {
         return $this->hasMany(App\Project::class);

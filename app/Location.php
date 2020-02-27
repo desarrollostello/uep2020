@@ -84,5 +84,15 @@ class Location extends Model
         return $this->hasMany(App\BankBranche::class);
     }
 
+    public function projectApplicant()
+    {
+        return $this->hasMany(App\ProjectApplicant::class);
+    }
+
+    public function project()
+    {
+        return $this->hasMany(App\Project::class);
+    }
+
 
 }

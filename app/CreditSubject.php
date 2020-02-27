@@ -45,7 +45,7 @@ class CreditSuject extends Model
     
 
     /**
-     * Retorna el Codigo Postal de la Localidad
+     * Retorna el Usuario que cargo el Dato del Sujeto de Crédito
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -54,13 +54,19 @@ class CreditSuject extends Model
         return $this->belongsTo('App\User', 'user_id');
     }
 
+    /**
+     * Retorna el Proyecto al cual pertenece el Sujeto de Crédito
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+
     public function project()
     {
         return $this->belongsTo('App\Proyect', 'proyect_id');
     }
 
     /**
-     * Retorna el Codigo Postal de la Localidad
+     * Retorna La Sucursal en donde se hizo el Sujeto de Crédito
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

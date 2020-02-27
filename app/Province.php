@@ -33,6 +33,13 @@ class Province extends Model
         return strtoupper($this->attributes['name']);
     }
 	
+
+    /**
+     *Una misma PROVINCIA puede estar presente varias veces en Localidad
+     *por ello la relación es hasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
 	public function locations()
   	{
     	return $this->hasMany(App\Location::class);

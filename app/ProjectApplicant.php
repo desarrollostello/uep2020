@@ -67,4 +67,9 @@ class ProjectApplicant extends Model
         return $this->belongsTo('App\CivilState', 'civil_state_id');
     }
 
+    public function locations()
+    {
+        return $this->belongsTo('App\Location', 'location_id');
+    }
+
 }

@@ -40,6 +40,12 @@ class Alert extends Model
         return strtoupper($this->attributes['name']);
     }
 
+    /**
+     * Una misma Alerta puede estar presente en varios registros de la tabla
+     * projectAlert, por eso la relación es hasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
     public function projectAlerts()
     {
         return $this->hasMany(App\ProjectAlert::class);
