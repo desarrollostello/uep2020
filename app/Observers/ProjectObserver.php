@@ -16,4 +16,9 @@ class ProjectObserver
     {
         $project->user_id = Auth::user()->id;
     }
+
+    public function updated(Project $project)
+    {
+        //$project->user_id = Auth::user()->id;
+    }
 }
