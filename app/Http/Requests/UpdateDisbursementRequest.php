@@ -15,13 +15,13 @@ class UpdateDisbursementRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_id'    => ['required'],
-            'date'          => ['required'],
+            'project_id'    => ['required|exists:projects,id'],
+            'date'          => ['required|date'],
             'nro'           => ['nullable'],
             'amount'        => ['required'],
             'description'   => ['nullable'],
             'payment'       => ['required'],
-            'user_id'       => ['nullable'],
+            'user_id'       => ['nullable|exists:users,id'],
         ];
     }
 

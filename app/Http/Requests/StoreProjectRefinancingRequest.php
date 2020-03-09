@@ -15,16 +15,16 @@ class StoreProjectRefinancingRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id'             => ['required'],
-        	'project_id'          => ['required'],
-            'date'                => ['required'],
+            'user_id'             => ['nullable|exists:users,id'],
+        	'project_id'          => ['required|exists:projects,id'],
+            'date'                => ['required|date'],
             'resolution'          => ['nullable'],
             'refinancing_amount'  => ['required'],
         	'rate'                => ['nullable'],
             'description'         => ['nullable'],
             'grace_period'        => ['required'],
             'amortization_period' => ['required'],
-            'periodicity_id'      => ['required'],
+            'periodicity_id'      => ['required|exists:periodicities,id'],
         ];
     }
 

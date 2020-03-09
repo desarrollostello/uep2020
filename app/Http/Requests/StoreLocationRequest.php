@@ -16,11 +16,11 @@ class StoreLocationRequest extends FormRequest
     {
         return [
             'name'          => ['required'],
-            'cp'            => ['nullable'],
+            'cp'            => ['nullable|numeric'],
             'province_id'   => ['required', 'exists:provinces,id'],
             'zone_id'       => ['required', 'exists:zones,id'],
             'dpto_id'       => ['required', 'exists:departaments,id'],
-            'user_id'       => ['required', 'exists:users,id'],
+            'user_id'       => ['nullable|exists:users,id'],
         ];
     }
 

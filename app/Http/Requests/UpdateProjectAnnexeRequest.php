@@ -15,9 +15,9 @@ class UpdateProjectAnnexeRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id'       => ['required'],
-            'project_id'    => ['required'],
-            'date'          => ['required'],
+            'user_id'       => ['nullable|exists:users,id'],
+            'project_id'    => ['required|exists:projects,id'],
+            'date'          => ['required|date'],
             'file'          => ['required'],
             'icon'          => ['nullable'],
             'name'          => ['required'],

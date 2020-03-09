@@ -15,9 +15,9 @@ class UpdateProjectAlertRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_id'        => ['required'],
-            'alert_id'          => ['required'],
-            'user_id'           => ['required'],
+            'project_id'        => ['required|exists:projects,id'],
+            'alert_id'          => ['required|exists:alerts,id'],
+            'user_id'           => ['nullable|exists:users,id'],
         ];
     }
 

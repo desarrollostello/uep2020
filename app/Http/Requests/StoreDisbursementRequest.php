@@ -16,12 +16,12 @@ class StoreDisbursementRequest extends FormRequest
     {
         return [
             'project_id'    => ['required'],
-        	'date'          => ['required'],
+        	'date'          => ['required|date'],
             'nro'           => ['nullable'],
             'amount'        => ['required'],
             'description'   => ['nullable'],
         	'payment'       => ['required'],
-            'user_id'       => ['nullable'],
+            'user_id'       => ['nullable|exists:users,id'],
         ];
     }
 

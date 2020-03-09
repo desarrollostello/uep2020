@@ -16,9 +16,9 @@ class StoreAuditRequest extends FormRequest
     {
         return [
             'model'         => ['required'],
-            'date'          => ['required'],
+            'date'          => ['required|date'],
             'previus_value' => ['required'],
-            'user_id'       => ['required'],
+            'user_id'       => ['nullable|exists:users,id'],
         ];
     }
 	

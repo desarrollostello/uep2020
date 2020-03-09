@@ -15,9 +15,9 @@ class UpdateChecklistRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_id'                        => ['required'],
-            'user_id'                           => ['required'],
-            'date'                              => ['required'],
+            'project_id'                        => ['required|exists:projects,id'],
+            'user_id'                           => ['nullable|exists:users,id'],
+            'date'                              => ['nullable'],
             'official_note'                     => ['nullable'],
             'checklist'                         => ['nullable'],
             'financing_request'                 => ['nullable'], //solicitud de Financiamiento

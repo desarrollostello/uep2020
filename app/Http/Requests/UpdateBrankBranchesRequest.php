@@ -18,12 +18,12 @@ class UpdateBankBranchesRequest extends FormRequest
             'name'          => ['required'],
             'address'       => ['nullable'],
             'phone'         => ['nullable'],
-            'email'         => ['nullable'],
+            'email'         => ['nullable|email'],
             'contact'       => ['nullable'],
             'manager'       => ['nullable'],
             'bank_id'       => ['required', 'exists:banks,id'],
             'location_id'   => ['required', 'exists:locations,id'],
-            'user_id'       => ['required', 'exists:users,id'],
+            'user_id'       => ['nullable|exists:users,id'],
         ];
     }
 

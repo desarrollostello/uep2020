@@ -18,8 +18,8 @@ class StoreCreditLineRequest extends FormRequest
             'name'                 => ['required'],
         	'description'          => ['required'],
             'maximum_amount'       => ['required'],
-            'maximum_grace'        => ['required'],
-            'maximum_amortization' => ['required'],
+            'maximum_grace'        => ['required|numeric'],
+            'maximum_amortization' => ['required|numeric'],
         	'rate'                 => ['required'],
         ];
     }

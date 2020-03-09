@@ -19,7 +19,7 @@ class StoreAlertRequest extends FormRequest
             'state'    => ['nullable'],
             'cod'      => ['required'],
             'color'    => ['required'],
-            'days'     => ['required'],
+            'days'     => ['required|numeric'],
             'sql'      => ['nullable'],
             'message'  => ['required'],
         ];

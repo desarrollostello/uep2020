@@ -16,8 +16,8 @@ class StoreChecklistRequest extends FormRequest
     {
         return [        
             'project_id'                        => ['required'],
-        	'user_id'                           => ['required'],
-            'date'                              => ['required'],
+        	'user_id'                           => ['nullable|exists:users,id'],
+            'date'                              => ['nullable'],
             'official_note'                     => ['nullable'],
             'checklist'                         => ['nullable'],
             'financing_request'                 => ['nullable'], //solicitud de Financiamiento

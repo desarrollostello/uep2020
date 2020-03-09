@@ -16,11 +16,11 @@ class UpdateCreditSubjectRequest extends FormRequest
     {
         return [
             'project_id'            => ['required'],
-            'bank_branche_id'       => ['required'],
-            'user_id'               => ['nullable'],
-            'date_shipping_bank'    => ['required'],
-            'bank_response_date'    => ['nullable'],
-            'credit_subject'        => ['required'],
+            'bank_branche_id'       => ['required|exists:bankBranches,id'],
+            'user_id'               => ['nullable|exists:users,id'],
+            'date_shipping_bank'    => ['required|date'],
+            'bank_response_date'    => ['nullable|date'],
+            'credit_subject'        => ['nullable'],
             'description'           => ['nullable'],
         ];
     }

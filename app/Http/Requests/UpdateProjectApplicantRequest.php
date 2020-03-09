@@ -15,22 +15,22 @@ class UpdateProjectApplicantRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_id'            => ['required'],
-            'user_id'               => ['nullable'],
+            'project_id'            => ['required|exists:projects,id'],
+            'user_id'               => ['nullable|exists:users,id'],
             'name_last_name'        => ['required'],
-            'date_birth'            => ['nullable'],
+            'date_birth'            => ['nullable|date'],
             'dni'                   => ['required'],
             'cuit'                  => ['nullable'],
             'legal_address'         => ['required'],
             'phone'                 => ['nullable'],
-            'mail'                  => ['nullable'],
-            'civil_state_id'        => ['required'],
-            'location_id'           => ['required'],
+            'mail'                  => ['nullable|email'],
+            'civil_state_id'        => ['required|exists:civilStates,id'],
+            'location_id'           => ['required|exists:locations,id'],
             'name_last_name_partner'=> ['nullable'],
             'dni_partner'           => ['nullable'],
             'phone_partner'         => ['nullable'],
             'cuit_partner'          => ['nullable'],
-            'date_birth_partner'    => ['nullable'],
+            'date_birth_partner'    => ['nullable|date'],
         ];
     }
 
